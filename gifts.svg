@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title">
+  <title id="title">Geschenke</title>
+  <rect width="320" height="180" rx="18" fill="#eaf8f1"/>
+  <path d="M66 81h188v76H66z" fill="#0f8b54"/>
+  <path d="M52 61h216v34H52z" fill="#16a366"/>
+  <path d="M149 61h22v96h-22z" fill="#ffd166"/>
+  <path d="M150 61c-34 0-58-8-58-28 0-13 11-21 24-21 21 0 35 23 45 49m10 0c10-26 24-49 45-49 13 0 24 8 24 21 0 20-24 28-58 28" fill="none" stroke="#ffd166" stroke-linecap="round" stroke-width="13"/>
+</svg>

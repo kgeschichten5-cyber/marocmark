@@ -1,0 +1,7 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marocmarkt Logo">
+  <rect width="160" height="160" rx="32" fill="#eaf8f1"/>
+  <path d="M30 100C30 78.5 47.5 61 69 61H91C112.5 61 130 78.5 130 100V110H30V100Z" fill="#0F8B54"/>
+  <circle cx="80" cy="51" r="24" fill="#0F8B54"/>
+  <path d="M60 51h40M80 31v40" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M38 118h84" stroke="#0F8B54" stroke-width="7" stroke-linecap="round"/>
+</svg>

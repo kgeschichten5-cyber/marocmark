@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marocmarkt | Petites annonces au Maroc</title>
+    <meta name="description" content="Marocmarkt est votre plateforme locale de petites annonces au Maroc." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css?v=3" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-block" aria-label="Marocmarkt Logo">
+          <img src="./assets/marocmarkt-logo.png" alt="Marocmarkt Logo" class="brand-logo" />
+          <span class="brand-name">Marocmarkt</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Hauptnavigation">
+          <div class="nav-select">
+            <span data-i18n="topCities">Städte</span>
+            <select id="navCityFilter" aria-label="Städte auswählen">
+              <option value="" data-de="Alle Städte" data-fr="Toutes les villes" data-ar="كل المدن">Alle Städte</option>
+              <option value="Casablanca" data-de="Casablanca" data-ar="الدار البيضاء">Casablanca / الدار البيضاء</option>
+              <option value="Rabat" data-de="Rabat" data-ar="الرباط">Rabat / الرباط</option>
+              <option value="Marrakesch" data-de="Marrakesch" data-ar="مراكش">Marrakesch / مراكش</option>
+              <option value="Fès" data-de="Fès" data-ar="فاس">Fès / فاس</option>
+              <option value="Tanger" data-de="Tanger" data-ar="طنجة">Tanger / طنجة</option>
+              <option value="Agadir" data-de="Agadir" data-ar="أكادير">Agadir / أكادير</option>
+              <option value="Meknès" data-de="Meknès" data-ar="مكناس">Meknès / مكناس</option>
+              <option value="Oujda" data-de="Oujda" data-ar="وجدة">Oujda / وجدة</option>
+              <option value="Kenitra" data-de="Kenitra" data-ar="القنيطرة">Kenitra / القنيطرة</option>
+              <option value="Tetouan" data-de="Tetouan" data-ar="تطوان">Tetouan / تطوان</option>
+              <option value="Safi" data-de="Safi" data-ar="آسفي">Safi / آسفي</option>
+              <option value="El Jadida" data-de="El Jadida" data-ar="الجديدة">El Jadida / الجديدة</option>
+              <option value="Nador" data-de="Nador" data-ar="الناظور">Nador / الناظور</option>
+              <option value="Beni Mellal" data-de="Beni Mellal" data-ar="بني ملال">Beni Mellal / بني ملال</option>
+              <option value="Khouribga" data-de="Khouribga" data-ar="خريبكة">Khouribga / خريبكة</option>
+              <option value="Settat" data-de="Settat" data-ar="سطات">Settat / سطات</option>
+              <option value="Taza" data-de="Taza" data-ar="تازة">Taza / تازة</option>
+              <option value="Larache" data-de="Larache" data-ar="العرائش">Larache / العرائش</option>
+              <option value="Ksar El Kebir" data-de="Ksar El Kebir" data-ar="القصر الكبير">Ksar El Kebir / القصر الكبير</option>
+              <option value="Al Hoceima" data-de="Al Hoceima" data-ar="الحسيمة">Al Hoceima / الحسيمة</option>
+              <option value="Berkane" data-de="Berkane" data-ar="بركان">Berkane / بركان</option>
+              <option value="Taourirt" data-de="Taourirt" data-ar="تاوريرت">Taourirt / تاوريرت</option>
+              <option value="Errachidia" data-de="Errachidia" data-ar="الرشيدية">Errachidia / الرشيدية</option>
+              <option value="Ouarzazate" data-de="Ouarzazate" data-ar="ورزازات">Ouarzazate / ورزازات</option>
+              <option value="Essaouira" data-de="Essaouira" data-ar="الصويرة">Essaouira / الصويرة</option>
+              <option value="Tiznit" data-de="Tiznit" data-ar="تيزنيت">Tiznit / تيزنيت</option>
+              <option value="Guelmim" data-de="Guelmim" data-ar="كلميم">Guelmim / كلميم</option>
+              <option value="Laâyoune" data-de="Laâyoune" data-ar="العيون">Laâyoune / العيون</option>
+              <option value="Dakhla" data-de="Dakhla" data-ar="الداخلة">Dakhla / الداخلة</option>
+              <option value="Chefchaouen" data-de="Chefchaouen" data-ar="شفشاون">Chefchaouen / شفشاون</option>
+              <option value="Ifrane" data-de="Ifrane" data-ar="إفران">Ifrane / إفران</option>
+              <option value="Taroudant" data-de="Taroudant" data-ar="تارودانت">Taroudant / تارودانت</option>
+              <option value="Sidi Kacem" data-de="Sidi Kacem" data-ar="سيدي قاسم">Sidi Kacem / سيدي قاسم</option>
+              <option value="Sidi Slimane" data-de="Sidi Slimane" data-ar="سيدي سليمان">Sidi Slimane / سيدي سليمان</option>
+              <option value="Mohammedia" data-de="Mohammedia" data-ar="المحمدية">Mohammedia / المحمدية</option>
+              <option value="Salé" data-de="Salé" data-ar="سلا">Salé / سلا</option>
+              <option value="Temara" data-de="Temara" data-ar="تمارة">Temara / تمارة</option>
+              <option value="Skhirat" data-de="Skhirat" data-ar="الصخيرات">Skhirat / الصخيرات</option>
+              <option value="Khémisset" data-de="Khémisset" data-ar="الخميسات">Khémisset / الخميسات</option>
+              <option value="Fquih Ben Salah" data-de="Fquih Ben Salah" data-ar="الفقيه بن صالح">Fquih Ben Salah / الفقيه بن صالح</option>
+              <option value="Midelt" data-de="Midelt" data-ar="ميدلت">Midelt / ميدلت</option>
+              <option value="Azrou" data-de="Azrou" data-ar="أزرو">Azrou / أزرو</option>
+              <option value="Guercif" data-de="Guercif" data-ar="جرسيف">Guercif / جرسيف</option>
+              <option value="Tan-Tan" data-de="Tan-Tan" data-ar="طانطان">Tan-Tan / طانطان</option>
+              <option value="Tata" data-de="Tata" data-ar="طاطا">Tata / طاطا</option>
+              <option value="Sefrou" data-de="Sefrou" data-ar="صفرو">Sefrou / صفرو</option>
+              <option value="Taounate" data-de="Taounate" data-ar="تاونات">Taounate / تاونات</option>
+              <option value="Ouezzane" data-de="Ouezzane" data-ar="وزان">Ouezzane / وزان</option>
+              <option value="Zagora" data-de="Zagora" data-fr="Zagora" data-ar="زاكورة">Zagora / زاكورة</option>
+              <option value="Zaida" data-de="Zaida" data-fr="Zaida" data-ar="زايدة">Zaida / زايدة</option>
+              <option value="Zaio" data-de="Zaio" data-fr="Zaio" data-ar="زايو">Zaio / زايو</option>
+              <option value="Zaouia Sidi Taher" data-de="Zaouia Sidi Taher" data-fr="Zaouia Sidi Taher" data-ar="زاوية سيدي الطاهر">Zaouia Sidi Taher / زاوية سيدي الطاهر</option>
+              <option value="Zaouiat Cheikh" data-de="Zaouiat Cheikh" data-fr="Zaouiat Cheikh" data-ar="زاوية الشيخ">Zaouiat Cheikh / زاوية الشيخ</option>
+              <option value="Zaouia Sidi Kacem" data-de="Zaouia Sidi Kacem" data-fr="Zaouia Sidi Kacem" data-ar="زاوية سيدي قاسم">Zaouia Sidi Kacem / زاوية سيدي قاسم</option>
+              <option value="Azghenghan" data-de="Azghenghan" data-fr="Azghenghan" data-ar="أزغنغان">Azghenghan / أزغنغان</option>
+              <option value="Zemamra" data-de="Zemamra" data-fr="Zemamra" data-ar="زمامرة">Zemamra / زمامرة</option>
+              <option value="Zemrane" data-de="Zemrane" data-fr="Zemrane" data-ar="زمران">Zemrane / زمران</option>
+              <option value="Zenata" data-de="Zenata" data-fr="Zenata" data-ar="زناتة">Zenata / زناتة</option>
+              <option value="Ziaida" data-de="Ziaida" data-fr="Ziaida" data-ar="زيايدة">Ziaida / زيايدة</option>
+            </select>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switcher" aria-label="Choisir la langue">
+            <button class="lang-btn active" type="button" data-lang="fr">FR</button>
+            <button class="lang-btn" type="button" data-lang="ar">العربية</button>
+          </div>
+          <button id="loginButton" class="btn btn-secondary" type="button" data-i18n="loginButton">Anmelden</button>
+          <button id="messageNotificationsButton" class="message-notifications" type="button" data-i18n-aria-label="messagesLabel" aria-label="Nachrichten" title="Nachrichten" hidden>
+            <img src="./assets/message-notification-bell.png" alt="" />
+            <span id="unreadMessageCount" class="message-notifications-count" aria-live="polite" hidden></span>
+          </button>
+          <button id="logoutButton" class="btn btn-secondary" type="button" data-i18n="logoutButton" hidden>Abmelden</button>
+          <button id="complaintsButton" class="btn btn-secondary" type="button">Beschwerden</button>
+          <button id="sellButton" class="btn btn-primary" type="button" data-i18n="sellButton">Anzeige aufgeben</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="appNotice" class="app-notice container" role="status" hidden></div>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow" data-i18n="heroEyebrow">Lokale Angebote in Marokko</span>
+            <h1 data-i18n="heroTitle">Finde schnell, was du suchst.</h1>
+            <p data-i18n="heroText">Von Autos und Wohnungen bis hin zu Technik, Möbeln und Jobs – Marocmarkt bringt Menschen in ganz Marokko zusammen.</p>
+          </div>
+
+          <div class="search-shell" aria-label="Suche nach Anzeigen">
+            <div class="search-grid">
+              <label class="field field-large">
+                <span data-i18n="searchLabel">Was suchst du?</span>
+                <input id="searchInput" type="text" placeholder="z. B. Dacia, Sofa, Wohnung" data-placeholder-de="z. B. Dacia, Sofa, Wohnung" data-placeholder-ar="مثل: داسيا، أريكة، شقة" />
+              </label>
+              <label class="field">
+                <span data-i18n="whereLabel">Wo?</span>
+                <select id="cityFilter">
+                  <option value="" data-de="Alle Städte" data-fr="Toutes les villes" data-ar="كل المدن">Alle Städte</option>
+                  <option value="Casablanca">Casablanca / الدار البيضاء</option>
+                  <option value="Rabat">Rabat / الرباط</option>
+                  <option value="Marrakesch">Marrakesch / مراكش</option>
+                  <option value="Fès">Fès / فاس</option>
+                  <option value="Tanger">Tanger / طنجة</option>
+                  <option value="Agadir">Agadir / أكادير</option>
+                  <option value="Meknès">Meknès / مكناس</option>
+                  <option value="Oujda">Oujda / وجدة</option>
+                  <option value="Kenitra">Kenitra / القنيطرة</option>
+                  <option value="Tetouan">Tetouan / تطوان</option>
+                  <option value="Safi">Safi / آسفي</option>
+                  <option value="El Jadida">El Jadida / الجديدة</option>
+                  <option value="Nador">Nador / الناظور</option>
+                  <option value="Beni Mellal">Beni Mellal / بني ملال</option>
+                  <option value="Khouribga">Khouribga / خريبكة</option>
+                  <option value="Settat">Settat / سطات</option>
+                  <option value="Taza">Taza / تازة</option>
+                  <option value="Larache">Larache / العرائش</option>
+                  <option value="Ksar El Kebir">Ksar El Kebir / القصر الكبير</option>
+                  <option value="Al Hoceima">Al Hoceima / الحسيمة</option>
+                  <option value="Berkane">Berkane / بركان</option>
+                  <option value="Taourirt">Taourirt / تاوريرت</option>
+                  <option value="Errachidia">Errachidia / الرشيدية</option>
+                  <option value="Ouarzazate">Ouarzazate / ورزازات</option>
+                  <option value="Essaouira">Essaouira / الصويرة</option>
+                  <option value="Tiznit">Tiznit / تيزنيت</option>
+                  <option value="Guelmim">Guelmim / كلميم</option>
+                  <option value="Laâyoune">Laâyoune / العيون</option>
+                  <option value="Dakhla">Dakhla / الداخلة</option>
+                  <option value="Chefchaouen">Chefchaouen / شفشاون</option>
+                  <option value="Ifrane">Ifrane / إفران</option>
+                  <option value="Taroudant">Taroudant / تارودانت</option>
+                  <option value="Sidi Kacem">Sidi Kacem / سيدي قاسم</option>
+                  <option value="Sidi Slimane">Sidi Slimane / سيدي سليمان</option>
+                  <option value="Mohammedia">Mohammedia / المحمدية</option>
+                  <option value="Salé">Salé / سلا</option>
+                  <option value="Temara">Temara / تمارة</option>
+                  <option value="Skhirat">Skhirat / الصخيرات</option>
+                  <option value="Khémisset">Khémisset / الخميسات</option>
+                  <option value="Fquih Ben Salah">Fquih Ben Salah / الفقيه بن صالح</option>
+                  <option value="Midelt">Midelt / ميدلت</option>
+                  <option value="Azrou">Azrou / أزرو</option>
+                  <option value="Guercif">Guercif / جرسيف</option>
+                  <option value="Tan-Tan">Tan-Tan / طانطان</option>
+                  <option value="Tata">Tata / طاطا</option>
+                  <option value="Sefrou">Sefrou / صفرو</option>
+                  <option value="Taounate">Taounate / تاونات</option>
+                  <option value="Ouezzane">Ouezzane / وزان</option>
+                  <option value="Zagora" data-de="Zagora / زاكورة" data-fr="Zagora" data-ar="زاكورة / Zagora">Zagora / زاكورة</option>
+                  <option value="Zaida" data-de="Zaida / زايدة" data-fr="Zaida" data-ar="زايدة / Zaida">Zaida / زايدة</option>
+                  <option value="Zaio" data-de="Zaio / زايو" data-fr="Zaio" data-ar="زايو / Zaio">Zaio / زايو</option>
+                  <option value="Zaouia Sidi Taher" data-de="Zaouia Sidi Taher / زاوية سيدي الطاهر" data-fr="Zaouia Sidi Taher" data-ar="زاوية سيدي الطاهر / Zaouia Sidi Taher">Zaouia Sidi Taher / زاوية سيدي الطاهر</option>
+                  <option value="Zaouiat Cheikh" data-de="Zaouiat Cheikh / زاوية الشيخ" data-fr="Zaouiat Cheikh" data-ar="زاوية الشيخ / Zaouiat Cheikh">Zaouiat Cheikh / زاوية الشيخ</option>
+                  <option value="Zaouia Sidi Kacem" data-de="Zaouia Sidi Kacem / زاوية سيدي قاسم" data-fr="Zaouia Sidi Kacem" data-ar="زاوية سيدي قاسم / Zaouia Sidi Kacem">Zaouia Sidi Kacem / زاوية سيدي قاسم</option>
+                  <option value="Azghenghan" data-de="Azghenghan / أزغنغان" data-fr="Azghenghan" data-ar="أزغنغان / Azghenghan">Azghenghan / أزغنغان</option>
+                  <option value="Zemamra" data-de="Zemamra / زمامرة" data-fr="Zemamra" data-ar="زمامرة / Zemamra">Zemamra / زمامرة</option>
+                  <option value="Zemrane" data-de="Zemrane / زمران" data-fr="Zemrane" data-ar="زمران / Zemrane">Zemrane / زمران</option>
+                  <option value="Zenata" data-de="Zenata / زناتة" data-fr="Zenata" data-ar="زناتة / Zenata">Zenata / زناتة</option>
+                  <option value="Ziaida" data-de="Ziaida / زيايدة" data-fr="Ziaida" data-ar="زيايدة / Ziaida">Ziaida / زيايدة</option>
+                </select>
+              </label>
+              <label class="field">
+                <span data-i18n="categoryLabel">Kategorie</span>
+                <select id="categoryFilter">
+                  <option value="" data-de="Alle Kategorien" data-fr="Toutes les catégories" data-ar="كل الفئات">Alle Kategorien</option>
+                  <option value="Autos" data-de="Autos" data-fr="Voitures" data-ar="سيارات">Autos</option>
+                  <option value="Immobilien" data-de="Immobilien" data-fr="Immobilier" data-ar="عقارات">Immobilien</option>
+                  <option value="Elektronik" data-de="Elektronik" data-fr="Électronique" data-ar="إلكترونيات">Elektronik</option>
+                  <option value="Möbel" data-de="Möbel" data-fr="Meubles" data-ar="أثاث">Möbel</option>
+                  <option value="Mode" data-de="Mode" data-fr="Mode" data-ar="موضة">Mode</option>
+                  <option value="Jobs" data-de="Jobs" data-fr="Emploi" data-ar="وظائف">Jobs</option>
+                  <option value="Freizeit" data-de="Freizeit" data-fr="Loisirs" data-ar="ترفيه">Freizeit</option>
+                  <option value="Haustiere" data-de="Haustiere" data-fr="Animaux" data-ar="الحيوانات الأليفة">Haustiere</option>
+                  <option value="Haus & Garten" data-de="Haus & Garten" data-fr="Maison et jardin" data-ar="المنزل والحديقة">Haus & Garten</option>
+                  <option value="Geschenke" data-de="Geschenke" data-fr="Cadeaux" data-ar="هدايا">Geschenke</option>
+                </select>
+              </label>
+              <button id="searchButton" class="btn btn-primary search-btn" type="button" data-i18n="findButton">Finden</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service section-space">
+        <div class="container service-grid">
+          <div class="service-copy">
+            <span class="eyebrow" data-i18n="serviceEyebrow">Dienstleistungen</span>
+            <h2 data-i18n="serviceTitle">Professionelle Hilfe für Zuhause und Geschäft</h2>
+            <p data-i18n="serviceText">Von Reparaturen und Montage bis hin zu Reinigung, Transport und Beratung – finde schnell zuverlässige Experten in deiner Nähe.</p>
+            <ul class="service-features">
+              <li data-i18n="servicePoint1">Reparatur & Montage</li>
+              <li data-i18n="servicePoint2">Haus & Garten</li>
+              <li data-i18n="servicePoint3">Transport & Lieferung</li>
+            </ul>
+            <a href="#categories" class="btn btn-primary" data-i18n="serviceButton">Mehr erfahren</a>
+          </div>
+
+          <div class="service-visual" aria-label="Illustration der Dienstleistungen">
+            <img src="./assets/dienstleistungen.png" alt="Dienstleistungen in Marokko" />
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" class="categories section-space">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow" data-i18n="categoryEyebrow">Beliebte Bereiche</span>
+              <h2 data-i18n="categoryHeading">Kategorien</h2>
+            </div>
+          </div>
+
+          <div class="category-grid" id="categoryGrid">
+            <button class="category-card auto-feature" type="button" data-category="Autos">
+              <span class="category-visual">
+                <img src="./assets/autos.png" alt="Autos" />
+              </span>
+              <span data-i18n="categoryAutos">Autos</span>
+            </button>
+            <button class="category-card property-feature" type="button" data-category="Immobilien">
+              <span class="category-visual">
+                <img src="./assets/immobilien.png" alt="Immobilien" />
+              </span>
+              <span data-i18n="categoryProperties">Immobilien</span>
+            </button>
+            <button class="category-card electronics-feature" type="button" data-category="Elektronik">
+              <span class="category-visual">
+                <img src="./assets/electronics.png" alt="Elektronik" />
+              </span>
+              <span data-i18n="categoryElectronics">Elektronik</span>
+            </button>
+            <button class="category-card furniture-feature" type="button" data-category="Möbel">
+              <span class="category-visual">
+                <img src="./assets/moebel.png" alt="Möbel" />
+              </span>
+              <span data-i18n="categoryFurniture">Möbel</span>
+            </button>
+            <button class="category-card mode-feature" type="button" data-category="Mode">
+              <span class="category-visual">
+                <img src="./assets/mode.png" alt="Mode" />
+              </span>
+              <span data-i18n="categoryFashion">Mode</span>
+            </button>
+            <button class="category-card jobs-feature" type="button" data-category="Jobs">
+              <span class="category-visual">
+                <img src="./assets/jobs.png" alt="Jobs" />
+              </span>
+              <span data-i18n="categoryJobs">Jobs</span>
+            </button>
+            <button class="category-card freizeit-feature" type="button" data-category="Freizeit">
+              <span class="category-visual">
+                <img src="./assets/freizeit.png" alt="Freizeitaktivitäten in Marokko" />
+              </span>
+              <span data-i18n="categoryLeisure">Freizeit</span>
+            </button>
+            <button class="category-card haustiere-feature" type="button" data-category="Haustiere">
+              <span class="category-visual">
+                <img src="./assets/haustiere.png" alt="Haustiere in Marokko" />
+              </span>
+              <span data-i18n="categoryPets">Haustiere</span>
+            </button>
+            <button class="category-card garden-feature" type="button" data-category="Haus & Garten">
+              <span class="category-visual">
+                <img src="./assets/haus-garten.png" alt="Haus und Garten" />
+              </span>
+              <span data-i18n="categoryHomeGarden">Haus & Garten</span>
+            </button>
+            <button class="category-card gifts-feature" type="button" data-category="Geschenke">
+              <span class="category-visual">
+                <img src="./assets/gifts.svg" alt="Geschenke" />
+              </span>
+              <span data-i18n="categoryGifts">Geschenke</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="latest" class="section-space">
+        <div class="container">
+          <div class="section-header split-header">
+            <div>
+              <span class="eyebrow" data-i18n="latestEyebrow">Neu eingetroffen</span>
+              <h2 data-i18n="latestHeading">Neueste Anzeigen</h2>
+            </div>
+            <div class="toolbar-row">
+              <label>
+                <span data-i18n="sortLabel">Sortieren</span>
+                <select id="sortSelect">
+                  <option value="newest" data-de="Neueste" data-fr="Les plus récentes" data-ar="الأحدث">Neueste</option>
+                  <option value="price-asc" data-de="Preis: niedrig → hoch" data-fr="Prix : croissant" data-ar="السعر: منخفض → مرتفع">Preis: niedrig → hoch</option>
+                  <option value="price-desc" data-de="Preis: hoch → niedrig" data-fr="Prix : décroissant" data-ar="السعر: مرتفع → منخفض">Preis: hoch → niedrig</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div id="listingGrid" class="listing-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="popular" class="section-space section-soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="eyebrow" data-i18n="popularEyebrow">Top-Aktionen</span>
+              <h2 data-i18n="popularHeading">Beliebte Anzeigen</h2>
+            </div>
+          </div>
+
+          <div id="popularGrid" class="listing-grid compact-grid"></div>
+        </div>
+      </section>
+
+      <section class="section-space moderation-section">
+        <div class="container">
+          <div class="moderation-panel">
+            <div class="panel-header">
+              <h3 data-i18n="moderationHeading">Beschwerden &amp; Moderation</h3>
+            </div>
+            <div id="complaintList" class="complaint-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="listingDialog" class="listing-dialog">
+      <div class="dialog-surface">
+        <button type="button" class="dialog-close" id="closeDialogButton" aria-label="Schließen">×</button>
+        <div id="listingDetailContent"></div>
+      </div>
+    </dialog>
+
+    <dialog id="authDialog" class="ad-dialog">
+      <div class="dialog-surface form-surface">
+        <div class="dialog-header">
+          <h3 data-i18n="loginButton">Anmelden</h3>
+          <button type="button" class="dialog-close" id="closeAuthDialogButton" aria-label="Schließen">×</button>
+        </div>
+        <form id="authForm" novalidate>
+          <div class="form-grid single-column">
+            <label id="authNameField" hidden>
+              <span data-i18n="accountNameLabel">Name</span>
+              <input id="authName" name="displayName" autocomplete="name" maxlength="80" />
+            </label>
+            <label id="authEmailField">
+              <span data-i18n="authEmailLabel">E-Mail</span>
+              <input id="authEmail" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label id="authPasswordField">
+              <span data-i18n="authPasswordLabel">Passwort</span>
+              <input id="authPassword" name="password" type="password" autocomplete="current-password" minlength="8" required />
+            </label>
+          </div>
+          <button type="button" class="auth-forgot-password" id="forgotPasswordButton" data-i18n="forgotPassword">Passwort vergessen?</button>
+          <p id="authError" class="form-error" aria-live="polite"></p>
+          <div class="dialog-actions">
+            <button type="button" class="btn btn-secondary" id="toggleAuthModeButton" data-i18n="authCreateAccount">Konto erstellen</button>
+            <button type="submit" class="btn btn-primary" id="authSubmitButton" data-i18n="loginButton">Anmelden</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="accountDialog" class="listing-dialog account-dialog">
+      <div class="dialog-surface">
+        <button type="button" class="dialog-close" id="closeAccountDialogButton" aria-label="Schließen">×</button>
+        <h2 data-i18n="accountTitle">Mein Marocmarkt</h2>
+        <div class="account-tabs" role="tablist">
+          <button type="button" class="btn btn-secondary account-tab active" data-account-tab="listings" data-i18n="myListings">Meine Anzeigen</button>
+          <button type="button" class="btn btn-secondary account-tab" data-account-tab="favorites" data-i18n="myFavorites">Favoriten</button>
+          <button type="button" class="btn btn-secondary account-tab" data-account-tab="messages" data-i18n="myMessages">Nachrichten</button>
+        </div>
+        <div id="accountContent" class="account-content" aria-live="polite"></div>
+      </div>
+    </dialog>
+
+    <dialog id="chatDialog" class="listing-dialog chat-dialog">
+      <div class="dialog-surface">
+        <button type="button" class="dialog-close" id="closeChatDialogButton" aria-label="Schließen">×</button>
+        <h2 id="chatHeading" data-i18n="myMessages">Nachrichten</h2>
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+        <form id="chatForm" class="chat-form">
+          <label class="sr-only" for="chatMessageInput" data-i18n="messageLabel">Nachricht</label>
+          <textarea id="chatMessageInput" name="message" rows="3" maxlength="5000" required></textarea>
+          <button type="submit" class="btn btn-primary" data-i18n="sendMessage">Senden</button>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="complaintDialog" class="ad-dialog">
+      <div class="dialog-surface form-surface">
+        <div class="dialog-header">
+          <h3 data-i18n="complaintModalTitle">Beschwerde melden</h3>
+          <button type="button" class="dialog-close" id="closeComplaintDialogButton" aria-label="Schließen">×</button>
+        </div>
+
+        <form id="complaintForm" novalidate>
+          <div class="form-grid single-column">
+            <label>
+              <span data-i18n="complaintTargetLabel">Betroffene Anzeige / Nutzer</span>
+              <select id="complaintTarget" name="complaintTarget" required>
+                <option value="" data-de="Bitte wählen" data-fr="Veuillez choisir" data-ar="يرجى الاختيار">Bitte wählen</option>
+              </select>
+            </label>
+
+            <label>
+              <span data-i18n="complaintReasonLabel">Grund</span>
+              <select id="complaintReason" name="complaintReason" required>
+                <option value="" data-de="Bitte wählen" data-fr="Veuillez choisir" data-ar="يرجى الاختيار">Bitte wählen</option>
+                <option value="Betrug" data-de="Betrug" data-fr="Fraude" data-ar="احتيال">Betrug</option>
+                <option value="Beleidigung" data-de="Beleidigung" data-fr="Insulte" data-ar="إهانة">Beleidigung</option>
+                <option value="Spam" data-de="Spam" data-fr="Spam" data-ar="إعلانات مزعجة">Spam</option>
+                <option value="Falsche Angaben" data-de="Falsche Angaben" data-fr="Informations mensongères" data-ar="معلومات خاطئة">Falsche Angaben</option>
+                <option value="Sonstiges" data-de="Sonstiges" data-fr="Autre" data-ar="أخرى">Sonstiges</option>
+              </select>
+            </label>
+
+            <label>
+              <span data-i18n="complaintMessageLabel">Beschreibung</span>
+              <textarea id="complaintMessage" name="complaintMessage" rows="5" placeholder="Beschreibe die Situation kurz und klar..." required></textarea>
+            </label>
+          </div>
+
+          <p id="complaintInfo" class="form-error" aria-live="polite"></p>
+
+          <div class="dialog-actions">
+            <button type="button" class="btn btn-secondary" id="cancelComplaintButton" data-i18n="complaintCancel">Abbrechen</button>
+            <button type="submit" class="btn btn-primary" data-i18n="complaintSubmit">Meldung senden</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="adDialog" class="ad-dialog">
+      <div class="dialog-surface form-surface">
+        <div class="dialog-header">
+          <h3 data-i18n="adDialogTitle">Anzeige aufgeben</h3>
+          <button type="button" class="dialog-close" id="closeAdDialogButton" aria-label="Schließen">×</button>
+        </div>
+
+        <form id="adForm" novalidate>
+          <div class="form-grid">
+            <label>
+              <span data-i18n="formTitle">Titel</span>
+              <input type="text" id="titleInput" name="title" placeholder="z. B. Dacia Logan" required />
+            </label>
+
+            <label>
+              <span data-i18n="formPrice">Preis (MAD)</span>
+              <input type="number" id="priceInput" name="price" min="1" step="1" placeholder="69000" required />
+            </label>
+
+            <label>
+              <span data-i18n="formCategory">Kategorie</span>
+              <select id="categoryInput" name="category" required>
+                <option value="" data-de="Bitte wählen" data-fr="Veuillez choisir" data-ar="يرجى الاختيار">Bitte wählen</option>
+                <option value="Autos" data-de="Autos" data-fr="Voitures" data-ar="السيارات">Autos</option>
+                <option value="Immobilien" data-de="Immobilien" data-fr="Immobilier" data-ar="العقارات">Immobilien</option>
+                <option value="Elektronik" data-de="Elektronik" data-fr="Électronique" data-ar="الإلكترونيات">Elektronik</option>
+                <option value="Möbel" data-de="Möbel" data-fr="Meubles" data-ar="الأثاث">Möbel</option>
+                <option value="Mode" data-de="Mode" data-fr="Mode" data-ar="الموضة">Mode</option>
+                <option value="Jobs" data-de="Jobs" data-fr="Emploi" data-ar="الوظائف">Jobs</option>
+                <option value="Freizeit" data-de="Freizeit" data-fr="Loisirs" data-ar="الترفيه">Freizeit</option>
+                <option value="Haustiere" data-de="Haustiere" data-fr="Animaux" data-ar="الحيوانات الأليفة">Haustiere</option>
+                <option value="Haus & Garten" data-de="Haus & Garten" data-fr="Maison et jardin" data-ar="المنزل والحديقة">Haus & Garten</option>
+                <option value="Geschenke" data-de="Geschenke" data-fr="Cadeaux" data-ar="هدايا">Geschenke</option>
+              </select>
+            </label>
+
+            <label>
+              <span data-i18n="formCity">Stadt</span>
+              <select id="cityInput" name="city" required>
+                <option value="" data-de="Bitte wählen" data-fr="Veuillez choisir" data-ar="يرجى الاختيار">Bitte wählen</option>
+                <option value="Casablanca" data-de="Casablanca / الدار البيضاء" data-ar="الدار البيضاء / Casablanca">Casablanca / الدار البيضاء</option>
+                <option value="Rabat" data-de="Rabat / الرباط" data-ar="الرباط / Rabat">Rabat / الرباط</option>
+                <option value="Marrakesch" data-de="Marrakesch / مراكش" data-ar="مراكش / Marrakesch">Marrakesch / مراكش</option>
+                <option value="Fès" data-de="Fès / فاس" data-ar="فاس / Fès">Fès / فاس</option>
+                <option value="Tanger" data-de="Tanger / طنجة" data-ar="طنجة / Tanger">Tanger / طنجة</option>
+                <option value="Agadir" data-de="Agadir / أكادير" data-ar="أكادير / Agadir">Agadir / أكادير</option>
+                <option value="Meknès" data-de="Meknès / مكناس" data-ar="مكناس / Meknès">Meknès / مكناس</option>
+                <option value="Oujda" data-de="Oujda / وجدة" data-ar="وجدة / Oujda">Oujda / وجدة</option>
+                <option value="Kenitra" data-de="Kenitra / القنيطرة" data-ar="القنيطرة / Kenitra">Kenitra / القنيطرة</option>
+                <option value="Tetouan" data-de="Tetouan / تطوان" data-ar="تطوان / Tetouan">Tetouan / تطوان</option>
+                <option value="Safi" data-de="Safi / آسفي" data-ar="آسفي / Safi">Safi / آسفي</option>
+                <option value="El Jadida" data-de="El Jadida / الجديدة" data-ar="الجديدة / El Jadida">El Jadida / الجديدة</option>
+                <option value="Nador" data-de="Nador / الناظور" data-ar="الناظور / Nador">Nador / الناظور</option>
+                <option value="Beni Mellal" data-de="Beni Mellal / بني ملال" data-ar="بني ملال / Beni Mellal">Beni Mellal / بني ملال</option>
+                <option value="Khouribga" data-de="Khouribga / خريبكة" data-ar="خريبكة / Khouribga">Khouribga / خريبكة</option>
+                <option value="Settat" data-de="Settat / سطات" data-ar="سطات / Settat">Settat / سطات</option>
+                <option value="Taza" data-de="Taza / تازة" data-ar="تازة / Taza">Taza / تازة</option>
+                <option value="Larache" data-de="Larache / العرائش" data-ar="العرائش / Larache">Larache / العرائش</option>
+                <option value="Ksar El Kebir" data-de="Ksar El Kebir / القصر الكبير" data-ar="القصر الكبير / Ksar El Kebir">Ksar El Kebir / القصر الكبير</option>
+                <option value="Al Hoceima" data-de="Al Hoceima / الحسيمة" data-ar="الحسيمة / Al Hoceima">Al Hoceima / الحسيمة</option>
+                <option value="Berkane" data-de="Berkane / بركان" data-ar="بركان / Berkane">Berkane / بركان</option>
+                <option value="Taourirt" data-de="Taourirt / تاوريرت" data-ar="تاوريرت / Taourirt">Taourirt / تاوريرت</option>
+                <option value="Errachidia" data-de="Errachidia / الرشيدية" data-ar="الرشيدية / Errachidia">Errachidia / الرشيدية</option>
+                <option value="Ouarzazate" data-de="Ouarzazate / ورزازات" data-ar="ورزازات / Ouarzazate">Ouarzazate / ورزازات</option>
+                <option value="Essaouira" data-de="Essaouira / الصويرة" data-ar="الصويرة / Essaouira">Essaouira / الصويرة</option>
+                <option value="Tiznit" data-de="Tiznit / تيزنيت" data-ar="تيزنيت / Tiznit">Tiznit / تيزنيت</option>
+                <option value="Guelmim" data-de="Guelmim / كلميم" data-ar="كلميم / Guelmim">Guelmim / كلميم</option>
+                <option value="Laâyoune" data-de="Laâyoune / العيون" data-ar="العيون / Laâyoune">Laâyoune / العيون</option>
+                <option value="Dakhla" data-de="Dakhla / الداخلة" data-ar="الداخلة / Dakhla">Dakhla / الداخلة</option>
+                <option value="Chefchaouen" data-de="Chefchaouen / شفشاون" data-ar="شفشاون / Chefchaouen">Chefchaouen / شفشاون</option>
+                <option value="Ifrane" data-de="Ifrane / إفران" data-ar="إفران / Ifrane">Ifrane / إفران</option>
+                <option value="Taroudant" data-de="Taroudant / تارودانت" data-ar="تارودانت / Taroudant">Taroudant / تارودانت</option>
+                <option value="Sidi Kacem" data-de="Sidi Kacem / سيدي قاسم" data-ar="سيدي قاسم / Sidi Kacem">Sidi Kacem / سيدي قاسم</option>
+                <option value="Sidi Slimane" data-de="Sidi Slimane / سيدي سليمان" data-ar="سيدي سليمان / Sidi Slimane">Sidi Slimane / سيدي سليمان</option>
+                <option value="Mohammedia" data-de="Mohammedia / المحمدية" data-ar="المحمدية / Mohammedia">Mohammedia / المحمدية</option>
+                <option value="Salé" data-de="Salé / سلا" data-ar="سلا / Salé">Salé / سلا</option>
+                <option value="Temara" data-de="Temara / تمارة" data-ar="تمارة / Temara">Temara / تمارة</option>
+                <option value="Skhirat" data-de="Skhirat / الصخيرات" data-ar="الصخيرات / Skhirat">Skhirat / الصخيرات</option>
+                <option value="Khémisset" data-de="Khémisset / الخميسات" data-ar="الخميسات / Khémisset">Khémisset / الخميسات</option>
+                <option value="Fquih Ben Salah" data-de="Fquih Ben Salah / الفقيه بن صالح" data-ar="الفقيه بن صالح / Fquih Ben Salah">Fquih Ben Salah / الفقيه بن صالح</option>
+                <option value="Midelt" data-de="Midelt / ميدلت" data-ar="ميدلت / Midelt">Midelt / ميدلت</option>
+                <option value="Azrou" data-de="Azrou / أزرو" data-ar="أزرو / Azrou">Azrou / أزرو</option>
+                <option value="Guercif" data-de="Guercif / جرسيف" data-ar="جرسيف / Guercif">Guercif / جرسيف</option>
+                <option value="Tan-Tan" data-de="Tan-Tan / طانطان" data-ar="طانطان / Tan-Tan">Tan-Tan / طانطان</option>
+                <option value="Zagora" data-de="Zagora / زاكورة" data-ar="زاكورة / Zagora">Zagora / زاكورة</option>
+                <option value="Zaida" data-de="Zaida / زايدة" data-ar="زايدة / Zaida">Zaida / زايدة</option>
+                <option value="Zaio" data-de="Zaio / زايو" data-ar="زايو / Zaio">Zaio / زايو</option>
+                <option value="Zaouia Sidi Taher" data-de="Zaouia Sidi Taher / زاوية سيدي الطاهر" data-ar="زاوية سيدي الطاهر / Zaouia Sidi Taher">Zaouia Sidi Taher / زاوية سيدي الطاهر</option>
+                <option value="Zaouiat Cheikh" data-de="Zaouiat Cheikh / زاوية الشيخ" data-ar="زاوية الشيخ / Zaouiat Cheikh">Zaouiat Cheikh / زاوية الشيخ</option>
+                <option value="Zaouia Sidi Kacem" data-de="Zaouia Sidi Kacem / زاوية سيدي قاسم" data-ar="زاوية سيدي قاسم / Zaouia Sidi Kacem">Zaouia Sidi Kacem / زاوية سيدي قاسم</option>
+                <option value="Azghenghan" data-de="Azghenghan / أزغنغان" data-ar="أزغنغان / Azghenghan">Azghenghan / أزغنغان</option>
+                <option value="Zemamra" data-de="Zemamra / زمامرة" data-ar="زمامرة / Zemamra">Zemamra / زمامرة</option>
+                <option value="Zemrane" data-de="Zemrane / زمران" data-ar="زمران / Zemrane">Zemrane / زمران</option>
+                <option value="Zenata" data-de="Zenata / زناتة" data-ar="زناتة / Zenata">Zenata / زناتة</option>
+                <option value="Ziaida" data-de="Ziaida / زيايدة" data-ar="زيايدة / Ziaida">Ziaida / زيايدة</option>
+                <option value="Tata" data-de="Tata / طاطا" data-ar="طاطا / Tata">Tata / طاطا</option>
+                <option value="Sefrou" data-de="Sefrou / صفرو" data-ar="صفرو / Sefrou">Sefrou / صفرو</option>
+                <option value="Taounate" data-de="Taounate / تاونات" data-ar="تاونات / Taounate">Taounate / تاونات</option>
+                <option value="Ouezzane" data-de="Ouezzane / وزان" data-ar="وزان / Ouezzane">Ouezzane / وزان</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span data-i18n="formDescription">Beschreibung</span>
+            <textarea id="descriptionInput" name="description" rows="5" placeholder="Beschreibe dein Angebot detailiert..." required></textarea>
+          </label>
+
+          <label>
+            <span data-i18n="formImages">Bilder (max. 10)</span>
+            <input type="file" id="imagesInput" name="images" accept="image/jpeg,image/png,image/webp" multiple />
+            <span id="selectedImages" class="selected-images" aria-live="polite"></span>
+          </label>
+
+          <p id="formError" class="form-error" aria-live="polite"></p>
+
+          <div class="dialog-actions">
+            <button type="button" class="btn btn-secondary" id="deleteAdButton" data-i18n="deleteListing" hidden>Anzeige löschen</button>
+            <button type="button" class="btn btn-secondary" id="cancelAdButton" data-i18n="formCancel">Abbrechen</button>
+            <button type="submit" class="btn btn-primary" data-i18n="formSubmit">Anzeige veröffentlichen</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-items" aria-label="Über Marocmarkt">
+          <span>À propos</span>
+          <span>Carrières</span>
+          <span>Presse</span>
+          <span>Magazine</span>
+          <span>Engagement</span>
+          <span>Applications mobiles</span>
+        </div>
+        <div class="footer-imprint">
+          <strong>Mentions légales</strong>
+          <span>marktmaroc@info.com</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./script.js?v=16"></script>
+  </body>
+</html>
